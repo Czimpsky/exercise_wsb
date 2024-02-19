@@ -1,0 +1,72 @@
+@use "base/typography.scss";
+@use "base/layout.scss";
+@use "utils/mixins.scss";
+@use "utils/variables.scss";
+
+body {
+  font-family: typography.$font-family;
+  background-color: layout.$background-body;
+  color: layout.$color-text;
+  margin: 0 auto;
+
+  .half-column {
+    display: inline-block;
+    width: 40%;
+    padding: 50px 0px 10px 20px;
+  }
+
+  .landing-copy {
+    margin-left: 70px;
+
+    p {
+      font-size: typography.$font-size-p;
+      line-height: 1.4em; 
+    }
+    
+    h1 {
+      font-size: typography.$font-size-h1;
+      line-height: typography.$line-height-h1;
+    }
+
+    .cta-button {
+      background-color: layout.$background-button;
+      color: layout.$color-text;
+      font-weight: typography.$font-weight-button;
+      border: layout.$border-button;
+      border-radius: layout.$border-radius-button;
+      padding: layout.$padding-button;
+
+      &:hover{
+        background-color: layout.$background-button-hov;
+        text-decoration: none;
+      }
+    }
+
+    .right {
+      float: right;
+    }
+  }
+
+  nav {
+    background-color: layout.$background-nav;
+
+    @include mixins.nav-mixin;
+  
+    li {
+      display: inline-block;
+      padding: 5px 30px;
+      font-weight: typography.$font-weight-nav;
+      font-size: typography.$font-size-nav;
+      margin: 10px;
+
+      a {
+        color: layout.$color-link;
+        text-decoration: none;
+      }
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
